@@ -27,3 +27,32 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
     Redis: Used for caching and session management.
     Docker: Containerization tool for consistent development and deployment environments.
     CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
+
+# Database Design
+
+    Users
+        A user can own multiple properties (if a host).
+        A user can make multiple bookings (if a guest).
+        A user can write multiple reviews.
+
+    Properties
+        A property belongs to one user (the host).
+        A property can have multiple bookings.
+        A property can have multiple reviews.
+
+    Bookings
+        A booking belongs to one user (the guest).
+        A booking belongs to one property.
+        A booking can have one payment associated.
+
+    Payments
+        A payment is associated with one booking.
+        Multiple payments can be made by a user(if a user has multiple bookings).
+        A payment is associated to a specific property.
+
+    Reviews
+        A review belongs to one user (the reviewer).
+        A review belongs to one property.
+        A review references a single booking.
+        
+
