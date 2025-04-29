@@ -54,5 +54,106 @@
         A review belongs to one user (the reviewer).
         A review belongs to one property.
         A review references a single booking.
-        
 
+# Feature Breakdown
+    1. API Documentation
+    
+        OpenAPI Standard: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
+        Django REST Framework: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
+        GraphQL: Offers a flexible and efficient query mechanism for interacting with the backend.
+    
+    2. User Authentication
+    
+        Endpoints: /users/, /users/{user_id}/
+        Features: Register new users, authenticate, and manage user profiles.
+    
+    3. Property Management
+    
+        Endpoints: /properties/, /properties/{property_id}/
+        Features: Create, update, retrieve, and delete property listings.
+    
+    4. Booking System
+    
+        Endpoints: /bookings/, /bookings/{booking_id}/
+        Features: Make, update, and manage bookings, including check-in and check-out details.
+    
+    5. Payment Processing
+    
+        Endpoints: /payments/
+        Features: Handle payment transactions related to bookings.
+    
+    6. Review System
+    
+        Endpoints: /reviews/, /reviews/{review_id}/
+        Features: Post and manage reviews for properties.
+    
+    7. Database Optimizations
+    
+        Indexing: Implement indexes for fast retrieval of frequently accessed data.
+        Caching: Use caching strategies to reduce database load and improve performance.
+
+# API Security
+
+    Key Security Measures
+    
+    1. Authentication
+           The process of verifying the identity of users before granting access.
+           Implementation:** Use secure login systems (e.g., OAuth2, multi-factor authentication, hashed passwords).
+           Why It’s Crucial:** Prevents unauthorized access to user accounts and protects sensitive data.
+    
+    2. Authorization
+           Ensures users can only access resources and perform actions they are permitted to.
+           Role-based access control (RBAC) or attribute-based access control (ABAC).
+           Prevents privilege escalation and misuse of system resources.
+    
+    3. Rate Limiting
+           Restricts the number of requests a user can make to the system in a given time frame.
+           Apply API rate limits and request throttling.
+           Protects against denial-of-service (DoS) attacks and abuse of system resources.
+    
+    4. Data Encryption
+           Converts data into a secure format during transmission and storage.
+           Use HTTPS (TLS), and encrypt sensitive data at rest using AES-256 or similar.
+           Protects data from being intercepted or stolen.
+    
+    5. Input Validation and Sanitization
+           Ensures user input is clean and within expected parameters.
+           Validate all inputs and sanitize to prevent injection attacks.
+           Prevents SQL injection, XSS, and other input-based attacks.
+    
+    6. Logging and Monitoring
+           Keeping records of system activity and user behavior.
+           Use centralized logging and set alerts for suspicious activities.
+           Helps detect and respond to breaches or misuse quickly.
+    
+    Why Security Is Crucial for Key Areas
+    
+    Sensitive personal information (e.g., emails, passwords, addresses) must be kept secure to maintain user trust and comply with data protection regulations like GDPR.
+    Payment information (e.g., credit card numbers, transaction details) is a high-value target. Security prevents fraud and ensures compliance with standards like PCI-DSS.
+    Unauthorized access or tampering can disrupt operations, damage reputation, or lead to data loss. Strong security safeguards the reliability of the entire system.
+    Without measures like rate limiting and proper authorization, systems can be overloaded or exploited, leading to downtime or increased costs.
+    Failing to implement appropriate security controls can result in legal consequences, fines, or loss of operating licenses.
+
+# CI/CD Pipeline
+
+    What Are CI/CD Pipelines?
+    
+    CI/CD stands for Continuous Integration and Continuous Deployment/Delivery. CI/CD pipelines automate the process of building, testing, and deploying code changes, allowing teams to deliver updates quickly and reliably.
+    Continuous Integration (CI): Automatically integrates code changes from multiple contributors into a shared repository and runs tests to ensure new changes don’t break the system.
+    Continuous Deployment/Delivery (CD): Automatically deploys tested and verified changes to production (deployment) or a staging environment (delivery) without manual intervention.
+
+    Why CI/CD Pipelines Are Important for the Project
+
+    Faster Development Cycles: Automating builds and deployments reduces delays and enables quicker feature releases.
+    Improved Code Quality: Automated testing helps catch bugs early before they reach production.
+    Consistent Deployments: Ensures all environments are updated the same way, reducing "it works on my machine" issues.
+    Reduced Manual Errors: Automation lowers the risk of human error during builds and deployments.
+    Enhanced Collaboration: Allows multiple developers to contribute code confidently and frequently.
+
+    Tools Commonly Used in CI/CD Pipelines
+
+    GitHub Actions: Automates workflows directly from your GitHub repository for CI/CD tasks.
+    Docker: Creates consistent environments using containers, making builds and deployments more reliable.
+    Jenkins: A customizable and widely used CI/CD tool for automating the software lifecycle.
+    GitLab CI/CD: Integrated CI/CD features within GitLab for seamless code management and delivery.
+    CircleCI or Travis CI: Cloud-based CI tools that support automated testing and deployment pipelines.
