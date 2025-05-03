@@ -17,7 +17,7 @@
     QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
 
 
-# Tech Stack
+# Technology Stack
 
     Django: A high-level Python web framework used for building the RESTful API.
     Django REST Framework: Provides tools for creating and managing RESTful APIs.
